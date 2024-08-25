@@ -41,7 +41,7 @@ pub fn discrete_log_shanks_steps(
     let mut x = a;
     for i in 0..m {
         if let Some(j) = t.get(&x) {
-            return Ok(Integer::from(i) * Integer::from(m) + Integer::from(j));
+            return Ok(Integer::from(i) * Integer::from(m) + Integer::from(*j));
         }
         x = x * &z % n;
     }
